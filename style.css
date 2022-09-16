@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap');
+
+body * {
+    font-family: 'Inter', sans-serif;
+    line-height: 160%;
+    /*altura da linha*/
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+
+body {
+    background-image: url(assetets/Fundo.jpg);
+    background-position: top center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-color: #121214;
+}
+header{
+    margin-top: 32px;
+    height: calc(120px + 32px);  /*essa altura foi definida pra a animação*/
+    
+}
+header div{
+    width: 120px;
+    margin: 0 auto;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43e7ad 50.52%, #e2d45c 100%);
+    border-radius: 50%;
+    display: flex;
+    padding: 4px;
+    transition: transform .3s;
+}
+header div:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+header img{
+    width: 100%;
+    border-radius: 50%;
+}
+main {
+    max-width: 580px;
+    /*a largura maxima de todas as coisas dentro dele  */
+    width: 90%;
+    /*largura pra quando a tela for menor que 580px (mobile normalmente) */
+    margin: 32px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 32px;
+    
+}
+
+section {
+    color: white;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43e7ad 50.52%, #e2d45c 100%);
+    padding-top: 4px;
+    border-radius: 10px;
+}
+
+section div {
+
+    padding: 32px;
+    padding-top: 24px;
+    background-color: #2a2634;
+    border-radius: 8px;
+}
+
+section h2 {
+    letter-spacing: -0.47px;
+    /*pouqissima diferença*/
+}
+
+section p {
+    letter-spacing: -0.18px;
+    color: #a1a1aa;
+}
+
+section ul {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+  
+}
+section ul li{
+    transition: transform .3s;
+}
+
+section ul li:hover  {
+    transform: scale(1.1);
+}
+/*
+UntilTheEnd
+*/
+.game-list img {
+    border-radius: 8px;
+    width: 90px;
+}
+
+.channel-list img {
+    border-radius: 50%;
+    width: 70px;
+    border: 1px solid #443E54;
+}
+
+
+
+
+
+
+/*ANIMATIONS*/
+
+header div{
+    animation: fromTop .9s .4s backwards; /*animacao - tempo da animação - delay pra começar a animação - é como se colocasse as animações do keyfram dentro desse seletor */
+   
+}
+
+main section{
+    animation: fromBottom .9s backwards ; /*sempre a animação possuir algum delay pra aparecer é bom colocar a propriedade backwards*/
+}
+
+main section:nth-child(1){ /*pega o section filho numero 1 */
+    animation-delay: 0s;
+}
+main section:nth-child(2){ /*pega o section filho numero 2*/
+    animation-delay: .4s;
+}
+main section:nth-child(3){ /*pega o section filho numero 3 */
+    animation-delay: .8s;
+}
+
+@keyframes fromTop {
+    from{
+        transform: translateX(30px); 
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fromBottom {
+    from{
+        transform: translateX(30px);
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/*em todos os translate x pode ser usado o translateY*/
+
+/*
+
+
+
+
+@keyframes fromTop {
+    from{
+        transform: translateY(-30px); 
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
